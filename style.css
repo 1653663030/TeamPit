@@ -1,0 +1,222 @@
+/* ==================== 全局 ==================== */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+.page {
+    min-height: 100vh;
+}
+
+/* ==================== 任务板 ==================== */
+.task-list {
+    min-height: 120px;
+    padding: 4px;
+}
+
+.task-item {
+    background: white;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-bottom: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    cursor: pointer;
+    transition: all 0.15s ease;
+    border-left: 4px solid #6c757d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-item:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    transform: translateY(-1px);
+}
+
+.task-item.todo { border-left-color: #6c757d; }
+.task-item.doing { border-left-color: #ffc107; }
+.task-item.done { border-left-color: #28a745; opacity: 0.7; }
+
+.task-item .task-title {
+    flex: 1;
+    font-size: 0.95rem;
+}
+
+.task-item .task-assignee {
+    font-size: 0.75rem;
+    color: #6c757d;
+    background: #e9ecef;
+    padding: 0 10px;
+    border-radius: 12px;
+    margin-left: 8px;
+}
+
+.task-item .task-actions {
+    display: flex;
+    gap: 4px;
+    margin-left: 8px;
+}
+
+.task-item .task-actions button {
+    border: none;
+    background: none;
+    color: #adb5bd;
+    padding: 0 4px;
+    font-size: 0.8rem;
+    transition: color 0.15s;
+}
+
+.task-item .task-actions button:hover {
+    color: #0d6efd;
+}
+
+.task-item .task-actions .btn-delete-task:hover {
+    color: #dc3545;
+}
+
+.empty-hint {
+    color: #adb5bd;
+    font-size: 0.85rem;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* ==================== 灵感墙 ==================== */
+.idea-item {
+    border-left: 3px solid #ffc107;
+    padding: 10px 14px;
+    margin-bottom: 6px;
+    background: white;
+    border-radius: 0 8px 8px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.idea-item .idea-content {
+    flex: 1;
+    font-size: 0.95rem;
+}
+
+.idea-item .idea-meta {
+    font-size: 0.75rem;
+    color: #adb5bd;
+    margin-left: 12px;
+    white-space: nowrap;
+}
+
+.idea-item .btn-del-idea {
+    border: none;
+    background: none;
+    color: #adb5bd;
+    padding: 0 6px;
+}
+
+.idea-item .btn-del-idea:hover {
+    color: #dc3545;
+}
+
+/* ==================== 文件仓 ==================== */
+.file-card {
+    background: white;
+    border-radius: 10px;
+    padding: 16px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    transition: all 0.15s ease;
+    height: 100%;
+}
+
+.file-card:hover {
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+}
+
+.file-card .file-icon {
+    font-size: 2rem;
+    color: #0d6efd;
+    margin-bottom: 8px;
+}
+
+.file-card .file-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    word-break: break-all;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.file-card .file-tag {
+    font-size: 0.7rem;
+    background: #e9ecef;
+    padding: 2px 10px;
+    border-radius: 12px;
+    color: #6c757d;
+    display: inline-block;
+}
+
+.file-card .file-uploader {
+    font-size: 0.75rem;
+    color: #adb5bd;
+}
+
+.file-card .btn-del-file {
+    border: none;
+    background: none;
+    color: #adb5bd;
+    padding: 0 4px;
+}
+
+.file-card .btn-del-file:hover {
+    color: #dc3545;
+}
+
+.file-preview-img {
+    max-width: 100%;
+    max-height: 120px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+/* ==================== 站会签到 ==================== */
+.checkin-card {
+    background: white;
+    border-radius: 10px;
+    padding: 14px 18px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    border-left: 4px solid #0d6efd;
+    margin-bottom: 10px;
+}
+
+.checkin-card .checkin-user {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.checkin-card .checkin-date {
+    font-size: 0.75rem;
+    color: #adb5bd;
+}
+
+.checkin-card .checkin-item {
+    font-size: 0.85rem;
+    color: #495057;
+}
+
+.checkin-card .checkin-label {
+    font-size: 0.7rem;
+    color: #adb5bd;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* ==================== 响应式微调 ==================== */
+@media (max-width: 768px) {
+    .task-item {
+        flex-wrap: wrap;
+    }
+    .task-item .task-title {
+        width: 100%;
+        margin-bottom: 4px;
+    }
+}
