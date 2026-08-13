@@ -12,7 +12,7 @@ jobs:
     
     steps:
       - name: 检出代码
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       - name: 安装 Python
         uses: actions/setup-python@v4
@@ -34,7 +34,7 @@ jobs:
           path: dist/TeamPit.exe
 
       - name: 创建 Release 并上传
-        uses: softprops/action-gh-release@v4
+        uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: dist/TeamPit.exe
